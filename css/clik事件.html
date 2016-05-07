@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="http://sun2.the9.com/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<style>
+body{ background:#000; color:#919ebc; font-size:12px; }
+*{ margin:0; padding:0;}
+a{ text-decoration:none; color:#919ebc;}
+ul, li{ list-style:none;}
+img{ border:0;}
+.topnews{ background:url(http://sun2.the9.com/images_launcher/img/btn.png) 0 -105px no-repeat;}
+.topnews a{color:#90affd; line-height:26px; padding:0 15px; text-align:center;}
+.main{ width:750px;}
+
+.ibox_bg{width:352px; height:105px; float:left; margin-top:6px; background:url(http://sun2.the9.com/images_launcher/img/bg_left2.gif) no-repeat; position:relative;}
+.ibox{width:282px; height:93px; float:left; margin:22px 0 0 46px; display:inline; overflow:hidden; position:relative; }
+.ibox .showbox{position:absolute; left:0; width:3000px;}
+.ibox .showbox ul li{float:left;}
+.ibox .showbox ul li http://sun2.the9.com/images_launcher/img{width:94px; height:64px;}
+.ibox_bg span{position:absolute; width:14px; height:18px; display:block; cursor:pointer;}
+.ibox_bg span.pre{top:45px; left:30px; background:url(http://sun2.the9.com/images_launcher/img/btn.png) -18px 0 no-repeat;}
+.ibox_bg span.next{top:45px; right:7px; background:url(http://sun2.the9.com/images_launcher/img/btn.png) -33px 0 no-repeat;}
+
+.ad{ height:180px; float:right; margin-right:10px; display:inline; position:relative;}
+.ad_pic{ width:372px; height:177px; display:block; overflow:hidden;}
+.ad_menu{ position:absolute; bottom:10px; right:10px;}
+.ad_menu a{ width:15px; height:15px; text-align:center; color:#ffd08c; font-weight:bold; display:inline-block; background:url(http://sun2.the9.com/images_launcher/img/btn.png);}
+</style>
+</head>
+
+<body>
+<div class="topnews">
+    <marquee direction=left behavior=scroll width=750 scrollamount=3 onmouseover=this.stop() onmouseout=this.start()>
+    <a href="#" target="_blank">新电信一区领取新手任务</a>
+    <a href="#" target="_blank">新电信一区领取新手任务</a>
+    <a href="#" target="_blank">新电信一区领取新手任务</a>
+    <a href="#" target="_blank">新电信一区领取新手任务</a>
+    </marquee>
+</div>
+
+<div class="main">
+    <div class="ad" id="banner1">
+        <span class="ad_pic">
+            <a href="#"><img src="http://sun2.the9.com/images_launcher/img/061603.jpg" /></a>
+            <a href="#"><img src="http://sun2.the9.com/images_launcher/img/061602.jpg" /></a>
+            <a href="#"><img src="http://sun2.the9.com/images_launcher/img/061601.jpg" /></a>
+            <a href="#"><img src="http://sun2.the9.com/images_launcher/img/061603.jpg" /></a>
+        </span>
+        <span class="ad_menu">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+        </span>
+    </div>
+    <div class="ibox_bg">
+        <div class="ibox">
+            <div class="showbox">
+                <ul>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                    <li><img src="http://sun2.the9.com/images_launcher/img/banner1.gif" alt="demo" title="demo" /></li>
+                </ul>
+            </div>
+        </div>
+        <span class="pre"></span>
+        <span class="next"></span>
+    </div>   
+</div>
+<script type="text/javascript">
+var t = n = 0, count;
+$(function(){
+    count=$(".ad_pic a").length;
+    $(".ad_pic a:not(:first-child)").hide();
+    $(".ad_menu a").click(function() {
+        var i = $(this).text() - 1;//获取.ad_menu a元素内的值，即1，2，3，4
+        n = i;
+        if (i >= count) return;
+        $(".ad_pic a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+        document.getElementByIdx_x("banner1").style.background="";
+        $(this).toggleClass("on");
+        $(this).siblings().removeAttr("class");
+    });
+    t = setInterval("showAuto()", 2200);
+    $("#banner1").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 2200);});
+})
+function showAuto(){
+    n = n >=(count - 1) ? 0 : ++n;
+    $(".ad_menu a").eq(n).trigger('click');
+}
+</script>
+
+<script type="text/javascript">
+$(function(){
+    var $cur = 1;//初始化显示的版面
+    var $i = 3;//每版显示数
+    var $len = $('.showbox>ul>li').length;//计算列表总长度(个数)
+    var $pages = Math.ceil($len / $i);
+    var $w = $('.ibox').width();//取得展示区外围宽度
+    var $showbox = $('.showbox');
+    var $pre = $('span.pre')
+    var $next = $('span.next');
+    var $autoFun;
+    autoSlide();
+    $pre.click(function(){
+        if (!$showbox.is(':animated')) {  //判断展示区是否动画
+            if ($cur == 1) {   //在第一个版面时,再向前滚动到最后一个版面
+                $showbox.animate({
+                    left: '-=' + $w * ($pages - 1)
+                }, 500); //改变left值,切换显示版面,500(ms)为滚动时间,下同
+                $cur = $pages; //初始化版面为最后一个版面
+            }
+            else {
+                $showbox.animate({
+                    left: '+=' + $w
+                }, 500); //改变left值,切换显示版面
+                $cur--; //版面累减
+            }
+        }
+    });
+    $next.click(function(){
+        if (!$showbox.is(':animated')) { //判断展示区是否动画
+            if ($cur == $pages) {  //在最后一个版面时,再向后滚动到第一个版面
+                $showbox.animate({
+                    left: 0
+                }, 500); //改变left值,切换显示版面,500(ms)为滚动时间,下同
+                $cur = 1; //初始化版面为第一个版面
+            }
+            else {
+                $showbox.animate({
+                    left: '-=' + $w
+                }, 500);//改变left值,切换显示版面
+                $cur++; //版面数累加
+            }
+          }
+    });
+    clearFun($showbox);
+    clearFun($pre);
+    clearFun($next);
+
+    function clearFun(elem){
+        elem.hover(function(){
+            clearAuto();
+        }, function(){
+            autoSlide();
+        });
+    }
+    function autoSlide(){
+        $next.trigger('click');
+        $autoFun = setTimeout(autoSlide, 3000);//此处不可使用setInterval,setInterval是重复执行传入函数,这会引起第二次划入时停止失效
+    }
+    function clearAuto(){
+        clearTimeout($autoFun);
+    }
+});
+</script>
+</body>
+</html>
